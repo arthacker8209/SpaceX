@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpaceX</string>
+    <string name="settings_button">Settings Button</string>
+    <string name="rocket_emoji">🚀</string>
+    <string name="launches_i_love">Launches I ❤️</string>
+    <string name="love">❤️</string>
+</resources>

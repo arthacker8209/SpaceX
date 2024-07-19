@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/launchFragment">
+
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.deepak.spacex.ui.launch.FragmentLaunch"
+        android:label="Default Fragment"
+        tools:layout="@layout/fragment_launch">
+        <action
+            android:id="@+id/action_launchFragment_to_launchDetailFragment"
+            app:destination="@id/launchDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="launchDetail"
+                app:argType="com.deepak.spacex.data.model.LaunchResponse$LaunchResponseItem" />
+        </action>
+        <action
+            android:id="@+id/action_launchFragment_to_favouriteLaunchFragment"
+            app:destination="@id/favouriteLaunchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchDetailFragment"
+        android:name="com.deepak.spacex.ui.launchdetail.FragmentLaunchDetail"
+        android:label="Launch Detail Fragment"
+        tools:layout="@layout/fragment_launch_detail">
+        <argument
+            android:name="launchDetail"
+            app:argType="com.deepak.spacex.data.model.LaunchResponse$LaunchResponseItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteLaunchFragment"
+        android:name="com.deepak.spacex.ui.favouritelaunch.FavouriteLaunchFragment"
+        android:label="FavouriteLaunchFragment"
+        tools:layout="@layout/fragment_favourite_launch"
+        >
+        <action
+            android:id="@+id/action_favLaunchFragment_to_launchDetailFragment"
+            app:destination="@id/launchDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right">
+            <argument
+                android:name="favLaunchDetail"
+                app:argType="com.deepak.spacex.data.model.BookmarkItem" />
+        </action>
+    </fragment>
+
+
+</navigation>
